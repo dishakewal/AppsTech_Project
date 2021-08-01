@@ -1,0 +1,61 @@
+{% extends 'sellerheader.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+	<div class="row">
+	{% for i in admin %}
+		<div class="col-sm-3" >
+			<div class="container-fluid">
+  				<div class="row" >
+  					<div class="col-md-12">
+  						<h2 class="text-center">View Deatils</h2>
+  						<table class="table" style="border: 1px solid #dddddd">
+  							<thead class="thead-dark">
+  								<tr >
+  									<th style="border: 1px solid #dddddd">ID</th> 
+  									<th style="border: 1px solid #dddddd">Company Name</th>
+  									<th style="border: 1px solid #dddddd">Company Address</th>
+  									<th style="border: 1px solid #dddddd">Person Name</th>
+  									<th style="border: 1px solid #dddddd">Contact</th>
+  									<th style="border: 1px solid #dddddd">Date<br> Time </th>
+  									<th style="border: 1px solid #dddddd">Comment's/Remarks</th>
+  								</tr>
+  							</thead>
+  						
+  						<tbody>
+  							{% for i in admin %}
+  								<tr>
+  									<td style="border: 1px solid #dddddd"> {{i.id}}</td>
+  									<td style="border: 1px solid #dddddd">{{i.Company_name}}</td>
+  									<td style="border: 1px solid #dddddd">{{i.Company_address}}</td>
+  									<td style="border: 1px solid #dddddd">{{i.person_name}}</td>
+  									<td style="border: 1px solid #dddddd">{{i.contact}}</td>
+  									<td style="border: 1px solid #dddddd">{{i.date_time}}</td>
+  									<td style="border: 1px solid #dddddd">{{i.Comment_remark}}</td>
+  									
+
+  									<td> <a href="{% url 'seller_Editdetails' pk=i.pk %}" class="btn btn-primary">Edit</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+    				 		<td> <a href="{% url 'seller_Deletedetails' pk=i.pk %}" class="btn btn-primary">Delete</a></td>
+  								</tr>
+
+  							{% endfor %}
+  						</tbody>
+
+  					</table>
+
+
+ 				 		</div>
+
+    				 		
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+</div>
+</body>
+</html>
+{% endblock %}

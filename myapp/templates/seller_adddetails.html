@@ -1,0 +1,61 @@
+{% extends 'sellerheader.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<center>
+	<h4>Add Details</h4>
+	{% if msg %}
+		<b><p style="color:blue;">{{msg}}</p></b>
+	{% endif %}
+	<form name="seller_adddetails" method="POST" action="{% url 'seller_adddetails' %}" enctype="multipart/form-data">
+		{% csrf_token %}
+		<table>
+
+			<tr>
+				<td>Company Name</td>
+				<td><input type="text" name="Company_name"></td>
+			</tr>
+
+			<tr>
+				<td>Company Address</td>
+				<td><textarea rows="3" cols="20" name="Company_address"></textarea></td>
+			</tr>
+
+			<tr>
+				<td>Contact Detail</td>
+				<td><input type="text" name="contact"></td>
+			</tr>
+			<tr>
+				<td>Person Name</td>
+				<td><input type="text" name="person_name"></td>
+			</tr>
+			<tr>
+				<td>Date & Time</td>
+				<td><textarea rows="2" cols="10" name="date_time"></textarea></td>
+			</tr>
+			
+			
+			<tr>
+				<td>Comments/Remarks</td>
+				<td><textarea rows="5" cols="22" name="Comment_remark"></textarea></td>
+			</tr>
+			<tr>
+				<td>Purpose</td>
+				<td><input type="text" name="purpose"></td>
+			</tr>
+			<tr>
+				<td colspan="2" align="center">
+					<input type="submit" name="action" value="Add  Details" class="btn_primary ">
+				</td>
+				
+			</tr>
+		</table>
+	</form>
+</center>
+</body>
+</html>
+{% endblock %}

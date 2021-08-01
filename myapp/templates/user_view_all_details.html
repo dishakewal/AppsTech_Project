@@ -1,0 +1,59 @@
+{% extends 'header.html' %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+	
+</head>
+<body>
+	<div class="row">
+	{% for i in admin %}
+		<div class="col-sm-3" >
+			<div class="container-fluid">
+  				<div class="row" >
+  					<div class="col-md-12">
+  						<h2 class="text-center">View Deatils</h2>
+  						<table class="table" style="border: 1px solid #dddddd">
+  							<thead class="thead-dark">
+  								<tr >
+  									<th style="border: 1px solid #dddddd">ID</th> 
+  									<th style="border: 1px solid #dddddd">Company Name</th>
+  									<th style="border: 1px solid #dddddd">Purpose</th>
+  									<th style="border: 1px solid #dddddd">PersonName</th>
+  									<th style="border: 1px solid #dddddd">Date<br> Time </th>
+                    <th style="border: 1px solid #dddddd">Contact </th>
+
+  									
+  								</tr>
+  							</thead>
+  						
+  						<tbody>
+  							{% for i in admin %}
+  								<tr>
+  									<td style="border: 1px solid #dddddd"> {{i.id}}</td>
+  									<td style="border: 1px solid #dddddd">{{i.Company_name}}</td>
+  									<td style="border: 1px solid #dddddd">{{i.purpose}}</td>
+  									<td style="border: 1px solid #dddddd">{{i.person_name}}</td>
+  								  <td style="border: 1px solid #dddddd">{{i.date_time}}</td>
+                    <td style="border: 1px solid #dddddd">{{i.contact}}</td>
+  								
+    				 		
+  								</tr>
+
+  							{% endfor %}
+  						</tbody>
+
+  					</table>
+
+
+ 				 		</div>
+
+    				 		
+				</div>
+			</div>
+		</div>
+	{% endfor %}
+</div>
+</body>
+</html>
+{% endblock %}
